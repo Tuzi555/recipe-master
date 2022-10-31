@@ -1,10 +1,10 @@
-<app-header></app-header>
+<app-header (routeSelected)="componentToShow = $event"></app-header>
 <div class="container pt-3">
   <div class="row">
     <div class="col-md">
-      <app-recipes></app-recipes>
+      <app-recipes *ngIf="componentToShow === 'recipes'"></app-recipes>
       <hr>
-      <app-shopping-list></app-shopping-list>
+      <app-shopping-list *ngIf="componentToShow === 'shoppingList'"></app-shopping-list>
     </div>
   </div>
 </div>

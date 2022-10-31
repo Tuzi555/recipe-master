@@ -6,20 +6,9 @@
 <hr>
 <div class="row">
   <div class="list-group">
-    <a *ngFor="let recipe of recipes" href="#"
-       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-      <div>
-        <h4 class="mb-1">{{recipe.name}}</h4>
-        <p class="mb-1">{{recipe.description}}</p>
-      </div>
-      <div>
-        <img src="{{recipe.imagePath}}"
-             alt="{{recipe.name}}"
-             class="img-fluid rounded"
-             style="max-height: 50px;">
-      </div>
-    </a>
+    <app-recipe-item *ngFor="let recipeEl of recipes; let i = index"
+                     [recipe]="recipeEl"
+                     (click)="onSelect(i)"></app-recipe-item>
   </div>
 </div>
-<app-recipe-item></app-recipe-item>
 
